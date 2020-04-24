@@ -13,3 +13,7 @@ docker container attach <container ID/name>                 - attach our Termina
 docker container logs <container ID/name>                   - access the logs of a given container
 docker container logs --tail 5 <container ID/name>          - only get a few of the latest entries
 docker container logs --tail 5 --follow <container ID/name> - follow the log that is produced by a container
+docker container diff <container ID/name>                   - to see what has changed in our container in relation to the base image
+docker image history <container ID/name>                    - to see how our custom image has been built
+docker image save -o ./backup/<file name>.tar <image name>  - takes <image name> image and exports it into a file called ./backup/<file name>.tar
+docker image load -i ./backup/<file name>.tar               - existing tarball and want to import it as an image into our system
