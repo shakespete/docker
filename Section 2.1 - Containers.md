@@ -1,4 +1,4 @@
-Mastering Containers:
+<h1>Mastering Containers</h1>
 
 Anatomy of the docker container run expression:
 
@@ -17,7 +17,7 @@ When you try to stop the trivia container, you will probably note that it takes 
 Docker sends a Linux SIGTERM signal to the main process running inside the container. If the process doesn't react to this signal and terminate itself, Docker waits for 10 seconds and then sends SIGKILL, which will kill the process forcefully and terminate the container.
 
 
-Anatomy of containers:
+<h3>Anatomy of containers:</h3>
 
 Containers are specially encapsulated and secured processes running on the host system. Containers leverage a lot of features and primitives available in the Linux OS. The most important ones are namespaces and cgroups. All processes running in containers only share the same Linux kernel of the underlying host operating system. This is fundamentally different compared with VMs, as each VM contains its own full-blown operating system.
 
