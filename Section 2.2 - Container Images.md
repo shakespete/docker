@@ -90,3 +90,4 @@ Dockerfile best practices
 
 3) The third way to create a new container image is by importing or loading it from a file.
 - A container image is nothing more than a tarball.
+** In computing, tar is a computer software utility for collecting many files into one archive file, often referred to as a tarball, for distribution or backup purposes.
