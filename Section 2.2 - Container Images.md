@@ -1,14 +1,14 @@
-Creating and Managing Container Images:
+<h1>Creating and Managing Container Images</h1>
 
 
-What are images?
+<h3>What are images?</h3>
 In Linux, everything is a file. The whole operating system is basically a
 filesystem with files and folders stored on the local disk. This is an important
 fact to remember when looking at what container images are.
 As we will see, an image is basically a big tarball containing a filesystem.
 More specifically, it contains a layered filesystem.
 
-The layered filesystem
+<h3>The layered filesystem</h3>
 Container images are templates from which containers are created.
 These images are not made up of just one monolithic block but are composed of
 many layers. The first layer in the image is also called the base layer.
@@ -17,14 +17,14 @@ The layers of a container image are all immutable. Immutable means that once gen
 the layer cannot ever be changed. The only possible operation affecting the layer is its
 physical deletion.
 
-The writable container layer
+<h3>The writable container layer</h3>
 As we have discussed, a container image is made of a stack of immutable or read-only layers.
 When the Docker Engine creates a container from such an image, it adds a writable container
 layer on top of this stack of immutable layers.
 The Container Layer is marked as read/write.
 
 
-Creating images
+<h3>Creating images</h3>
 1) Interactive image creation
 - We run the container interactively with an attached teletypewriter (TTY) using the -it parameter
 - Run a shell inside the container using /bin/sh
@@ -35,7 +35,7 @@ on how to build a custom container image. It is a declarative way of building im
 - Each line of the Dockerfile results in a layer in the resulting image.
 - The base layer is always the lowest layer in the stack
 
-KEYWORDS:
+<h3>KEYWORDS:</h3>
 
 FROM
 - Every Dockerfile starts with the FROM keyword. With it, we define which base image we want to start building our custom image from.
@@ -69,7 +69,7 @@ This is the preferred way of defining CMD and ENTRYPOINT. It is also called the 
 - If you leave ENTRYPOINT undefined, then it will have the default value of /bin/sh -c, and whatever the value of CMD is will be passed as a string to the shell command.
 
 
-So, how does the builder work, exactly?
+<h3>So, how does the builder work, exactly?</h3>
 
 It starts with the base image. From this base image, once downloaded into the local cache, the builder creates a container
 and runs the first statement of the Dockerfile inside this container. Then, it stops the container and persists the changes
@@ -78,10 +78,10 @@ and runs the second statement inside this new container. Once again, the result 
 This process is repeated until the very last statement in the Dockerfile is encountered.
 
 
-Multi-step builds
+<h3>Multi-step builds</h3>
 We have some stages that are used to build the final artifacts, and then a final stage, where we use the minimal necessary base image and copy the artifacts into it. This results in very small Docker images.
 
-Dockerfile best practices
+<h3>Dockerfile best practices</h3>
 - First and foremost, we need to consider that containers are meant to be ephemeral. By ephemeral, we mean that a container can be stopped and destroyed, and a new one built and put in place with an absolute minimum of setup and configuration.
 - The next best practice tells us that we should order the individual commands in the Dockerfile so that we leverage caching as much as possible.
 ** When we're rebuilding a previously built image, the only layers that are rebuilt are the ones that have changed, but if one layer needs to be rebuilt, all subsequent layers also need to be rebuilt.
