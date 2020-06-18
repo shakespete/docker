@@ -21,17 +21,17 @@ Docker sends a Linux SIGTERM signal to the main process running inside the conta
 
 Containers are specially encapsulated and secured processes running on the host system. Containers leverage a lot of features and primitives available in the Linux OS. The most important ones are namespaces and cgroups. All processes running in containers only share the same Linux kernel of the underlying host operating system. This is fundamentally different compared with VMs, as each VM contains its own full-blown operating system.
 
-Namespace: A namespace is an abstraction of global resources such as filesystems, network access, and process trees (also named PID namespaces) or the system group IDs and user IDs.
+<strong>Namespace:</strong> A namespace is an abstraction of global resources such as filesystems, network access, and process trees (also named PID namespaces) or the system group IDs and user IDs.
 
-cgroups: Linux cgroups are used to limit, manage, and isolate resource usage of collections of processes running on a system.
+<strong>cgroups:</strong> Linux cgroups are used to limit, manage, and isolate resource usage of collections of processes running on a system.
 
-Union filesystem (Unionfs): Unionfs forms the backbone of what is known as container images. Unionfs is mainly used on Linux and allows files and directories of distinct filesystems to be overlaid to form a single coherent filesystem.
+<strong>Union filesystem (Unionfs):</strong> Unionfs forms the backbone of what is known as container images. Unionfs is mainly used on Linux and allows files and directories of distinct filesystems to be overlaid to form a single coherent filesystem.
 
 
 The basement on top of which the Docker engine is built; is the container plumbing and is formed by two components, runc and containerd.
 
-runC: runC is a lightweight, portable container runtime. runC is a tool for spawning and running containers according to the Open Container Initiative (OCI) specification.
+<strong>runC:</strong> runC is a lightweight, portable container runtime. runC is a tool for spawning and running containers according to the Open Container Initiative (OCI) specification.
 
-Containerd: runC is a low-level implementation of a container runtime; containerd builds on top of it and adds higher-level features, such as image transfer and storage, container execution, and supervision as well as network and storage attachments.
+<strong>Containerd:</strong> runC is a low-level implementation of a container runtime; containerd builds on top of it and adds higher-level features, such as image transfer and storage, container execution, and supervision as well as network and storage attachments.
 
 ![alt text](https://github.com/shakespete/docker/blob/master/img/docker_architecture.png)

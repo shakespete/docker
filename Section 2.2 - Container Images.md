@@ -23,6 +23,11 @@ When the Docker Engine creates a container from such an image, it adds a writabl
 layer on top of this stack of immutable layers.
 The Container Layer is marked as read/write.
 
+![alt text](https://github.com/shakespete/docker/blob/master/img/writable_container_layer.png)
+
+Another advantage of the immutability of image layers is that they can be shared among many containers created from this image. All that is needed is a thin, writable container layer for each container:
+
+![alt text](https://github.com/shakespete/docker/blob/master/img/multiple_rw_layers.png)
 
 <h3>Creating images</h3>
 1) Interactive image creation
