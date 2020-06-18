@@ -3,63 +3,63 @@
 <table>
   <tr>
     <td>docker container ls</td>
-    <td>- list running containers</td>
+    <td>list running containers</td>
   </tr>
   <tr>
     <td>docker container ls -a</td>
-    <td>- list all containers</td>
+    <td>list all containers</td>
   </tr>
   <tr>
     <td>docker container ls -q</td>
-    <td>- list the IDs of all containers</td>
+    <td>list the IDs of all containers</td>
   </tr>
   <tr>
     <td>docker container start **container name**</td>
-    <td>- start specified container</td>
+    <td>start specified container</td>
   </tr>
   <tr>
     <td>docker container stop **container name**</td>
-    <td>- stop specified container</td>
+    <td>stop specified container</td>
   </tr>
   <tr>
     <td>docker container rm **container ID/name**</td>
-    <td>- remove a container</td>
+    <td>remove a container</td>
   </tr>
   <tr>
     <td>docker container rm -f **container ID/name**</td>
-    <td>- force remove a container</td>
+    <td>force remove a container</td>
   </tr>
   <tr>
     <td>docker container inspect **container ID/name**</td>
-    <td>- inspect a container</td>
+    <td>inspect a container</td>
   </tr>
   <tr>
-    <td>docker container inspect -f "{{json .State}}" trivia | jq .</td>
-    <td>- inspect specific info</td>
+    <td>docker container inspect -f "{{json .State}}" **container ID/name** | jq .</td>
+    <td>inspect/filter specific info</td>
   </tr>
   <tr>
     <td>docker container exec -i -t **container ID/name** /bin/sh</td>
-    <td>- exec into a running container</td>
+    <td>exec into a running container. The -i flag signifies that we want to run the additional process interactively, and -t tells Docker that we want it to provide us with a TTY (a Terminal emulator) for the command. Finally, the process we run is /bin/sh.</td>
   </tr>
   <tr>
     <td>docker container attach **container ID/name**</td>
-    <td>- attach our Terminal's standard input, output, and error (or any combination of the three) to a running container</td>
+    <td>attach our Terminal's standard input, output, and error (or any combination of the three) to a running container</td>
   </tr>
   <tr>
     <td>docker container logs **container ID/name**</td>
-    <td>- access the logs of a given container</td>
+    <td>access the logs of a given container</td>
   </tr>
   <tr>
     <td>docker container logs --tail 5 **container ID/name**</td>
-    <td>- only get a few of the latest entries</td>
+    <td>only get a few of the latest entries</td>
   </tr>
   <tr>
     <td>docker container logs --tail 5 --follow **container ID/name**</td>
-    <td>- follow the log that is produced by a container</td>
+    <td>Sometimes, we want to follow the log that is produced by a container. This is possible when using the -f or --follow parameter. The following expression will output the last five log items and then follow the log as it is produced by the containerized process</td>
   </tr>
   <tr>
     <td>docker container diff **container ID/name**</td>
-    <td>- to see what has changed in our container in relation to the base image</td>
+    <td>to see what has changed in our container in relation to the base image</td>
   </tr>
   <tr>
     <td>docker container rm -f $(docker container ls -aq)</td>
@@ -67,15 +67,15 @@
   </tr>
   <tr>
     <td>docker image history **container ID/name**</td>
-    <td>- to see how our custom image has been built</td>
+    <td>to see how our custom image has been built</td>
   </tr>
   <tr>
     <td>docker image save -o ./backup/**file name**.tar **image name**</td>
-    <td>- takes **image name** image and exports it into a file called ./backup/**file name**.tar</td>
+    <td>takes **image name** image and exports it into a file called ./backup/**file name**.tar</td>
   </tr>
   <tr>
     <td>docker image load -i ./backup/**file name**.tar</td>
-    <td>- existing tarball and want to import it as an image into our system</td>
+    <td>existing tarball and want to import it as an image into our system</td>
   </tr>
   <tr>
     <td>docker-machine ssh **vm name**</td>
