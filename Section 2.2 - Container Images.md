@@ -30,15 +30,19 @@ Another advantage of the immutability of image layers is that they can be shared
 ![alt text](https://github.com/shakespete/docker/blob/master/img/multiple_rw_layers.png)
 
 <h3>Creating images</h3>
-1) Interactive image creation
+<h4>1) Interactive image creation</h4>
 - We run the container interactively with an attached teletypewriter (TTY) using the -it parameter
 - Run a shell inside the container using /bin/sh
 
-2) Using Dockerfiles
+<h4>2) Using Dockerfiles</h4>
 A Dockerfile is a text file that is usually literally called Dockerfile. It contains instructions
 on how to build a custom container image. It is a declarative way of building images.
 - Each line of the Dockerfile results in a layer in the resulting image.
 - The base layer is always the lowest layer in the stack
+
+Don't let yourself be confused by this. In reality, the base layer is always the lowest layer in the stack.
+
+![alt text](https://github.com/shakespete/docker/blob/master/img/layer_stack.png)
 
 <h3>KEYWORDS:</h3>
 
@@ -82,6 +86,7 @@ made in the container into a new image layer. The builder then creates a new con
 and runs the second statement inside this new container. Once again, the result is committed to a new layer.
 This process is repeated until the very last statement in the Dockerfile is encountered.
 
+![alt text](https://github.com/shakespete/docker/blob/master/img/builder.png)
 
 <h3>Multi-step builds</h3>
 We have some stages that are used to build the final artifacts, and then a final stage, where we use the minimal necessary base image and copy the artifacts into it. This results in very small Docker images.
@@ -93,6 +98,6 @@ We have some stages that are used to build the final artifacts, and then a final
 - A further best practice is to keep the number of layers that make up your image relatively small. 
 - Remember that in a Dockerfile, each line that starts with a keyword such as FROM, COPY, or RUN creates a new layer. The easiest way to reduce the number of layers is to combine multiple individual RUN commands into a single one.
 
-3) The third way to create a new container image is by importing or loading it from a file.
+<h4>3) The third way to create a new container image is by importing or loading it from a file.</h4>
 - A container image is nothing more than a tarball.
 ** In computing, tar is a computer software utility for collecting many files into one archive file, often referred to as a tarball, for distribution or backup purposes.

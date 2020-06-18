@@ -1,6 +1,5 @@
 <h1>Data Volumes and Configuration:</h1>
 
-
 <h3>Creating and mounting data volumes</h3>
 Volumes allow containers to consume, produce, and modify a state. Volumes have a life cycle that goes beyond the life cycle of containers. When a container that uses a volume dies, the volume continues to exist. This is great for the durability of the state.
 
