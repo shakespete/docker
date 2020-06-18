@@ -33,3 +33,5 @@ The basement on top of which the Docker engine is built; is the container plumbi
 runC: runC is a lightweight, portable container runtime. runC is a tool for spawning and running containers according to the Open Container Initiative (OCI) specification.
 
 Containerd: runC is a low-level implementation of a container runtime; containerd builds on top of it and adds higher-level features, such as image transfer and storage, container execution, and supervision as well as network and storage attachments.
+
+![alt text](https://github.com/shakespete/docker/blob/master/img/docker_architecture.png)
