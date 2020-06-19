@@ -78,6 +78,10 @@
     <td>existing tarball and want to import it as an image into our system</td>
   </tr>
   <tr>
+    <td>docker-machine create --driver virtualbox **vm name**</td>
+    <td>Creates VM running in VirtualBox</td>
+  </tr>
+  <tr>
     <td>docker-machine ssh **vm name**</td>
     <td>SSH into this VM</td>
   </tr>
