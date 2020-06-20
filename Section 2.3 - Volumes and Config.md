@@ -33,3 +33,46 @@ $ docker image pull mongo:3.7
 $ docker run --name my-mongo -d mongo:3.7
 $ docker inspect --format '{{json .Mounts}}' my-mongo | jq .
 ```
+
+<h3>Configuring containers</h3>
+
+we can actually pass some configuration values into the container at start time. We can use the --env (or the short form, -e) parameter in the form <strong>--env key=value</strong> to do so, where <strong>key</strong> is the name of the environment variable and <strong>value</strong> represents the value to be associated with that variable.
+
+We can, of course, define more than just one environment variable when we run a container. We just need to repeat the --env (or -e) parameter.
+
+```
+$ docker container run --rm -it \
+  --env LOG_DIR=/var/log/my-log \
+  --env MAX_LOG_FILES=5 \
+  --env MAX_LOG_SIZE=1G \
+ alpine /bin/sh
+/ #
+/ # export | grep LOG
+export LOG_DIR='/var/log/my-log'
+export MAX_LOG_FILES='5'
+export MAX_LOG_SIZE='1G'
+```
+
+Complex applications can have many environment variables to configure, and thus our command to run the corresponding container can quickly become unwieldy. For this purpose, Docker allows us to pass a collection of environment variable definitions as a file, and we have the --env-file parameter in the docker container run command.
+
+```
+$ docker container run --rm -it --env-file ./development.config alpine sh -c "export"
+```
+
+Sometimes, we want to define some default value for an environment variable that must be present in each container instance of a given container image. We can do so in the Dockerfile that is used to create that image.
+
+```
+*Dockerfile*
+FROM alpine:latest
+ENV LOG_DIR=/var/log/my-log
+ENV  MAX_LOG_FILES=5
+ENV MAX_LOG_SIZE=1G
+*Dockerfile*
+
+$ docker image build -t my-alpine .
+$ docker container run --rm -it my-alpine sh -c "export | grep LOG"
+```
+
+The good thing, though, is that we are not stuck with those variable values at all. We can override one or many of them, using the --env parameter in the docker container run command. We can also override default values, using environment files together with the --env-file parameter in the docker container run command.
+
+To summarize, environment variables defined via --env or --env-file are valid at container runtime. Variables defined with ARG in the Dockerfile or --build-arg in the docker container build command are valid at container image build time. The former are used to configure an application running inside a container, while the latter are used to parametrize the container image build process.
