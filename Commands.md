@@ -94,8 +94,16 @@
     <td>to find out where the data is stored on the host</td>
   </tr>
   <tr>
-    <td>docker container run --name **container name** -it -v **sample**:/data alpine /bin/sh</td>
-    <td>mounts the **sample** volume to the /data folder inside the container</td>
+    <td>docker container run --name **container name** -it -v **data**:/data alpine /bin/sh</td>
+    <td>Mounts the **data** volume to the /data folder inside the container. This is mounted in default read/write mode</td>
+  </tr>
+  <tr>
+    <td>docker container run --name **container name** -it -v **data**:/data:ro alpine /bin/sh</td>
+    <td>Mounts the **data** volume to the /data folder inside the container. The volume is mounted as read-only (ro).</td>
+  </tr>
+  <tr>
+    <td>docker container run --rm -it -v $(pwd)/src:/app/src alpine:latest /bin/sh</td>
+    <td>Interactively starts an alpine container with a shell and mounts the src subfolder of the current directory into the container at /app/src. We need to use $(pwd) (or `pwd`, for that matter), which is the current directory, as when working with volumes, we always need to use absolute paths.</td>
   </tr>
   <tr>
     <td>docker volume rm **volume name**</td>
