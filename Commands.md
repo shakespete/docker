@@ -109,6 +109,26 @@
     <td>docker volume rm **volume name**</td>
     <td>deletes volume</td>
   </tr>
+  <tr>
+    <td>docker image prune -f</td>
+    <td>According to Docker, dangling images are layers that have no relationship to any tagged images. Such image layers are certainly useless to us and can quickly fill up our disk—it's better to remove them from time to time.</td>
+  </tr>
+  <tr>
+    <td>docker container prune -f</td>
+    <td>Stopped containers can waste precious resources too. If you're sure that you don't need these containers anymore, then you should remove them.</td>
+  </tr>
+  <tr>
+    <td>docker volume prune</td>
+    <td>Unused Docker volumes too can quickly fill up disk space. It is a good practice to tender your volumes, specifically in a development or CI environment where you create a lot of mostly temporary volumes. But I have to warn you, Docker volumes are meant to store data. Often, this data must live longer than the life cycle of a container.</td>
+  </tr>
+  <tr>
+    <td>docker ps -a --format "table {{.Names}}\t{{.Image}}\t{{.Status}}"</td>
+    <td>Show the name of the container, the name of the image, and the state of the container</td>
+  </tr>
+  <tr>
+    <td>docker image ls --filter dangling=false --filter "reference=*/*/*:latest"</td>
+    <td> outputs images that are not dangling, that is, real images whose fully qualified name is of the form registry/user|orgrepository>:tag, and the tag is equal to latest. </td>
+  </tr>
  </table>   
  
 

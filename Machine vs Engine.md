@@ -9,3 +9,7 @@ Docker Engine accepts docker commands from the CLI, such as docker run <image>, 
 
 
 **Docker Machine** is a tool for provisioning and managing your Dockerized hosts (hosts with Docker Engine on them). Typically, you install Docker Machine on your local system. Docker Machine has its own command line client docker-machine and the Docker Engine client, docker. You can use Machine to install Docker Engine on one or more virtual systems. These virtual systems can be local (as when you use Machine to install and run Docker Engine in VirtualBox on Mac or Windows) or remote (as when you use Machine to provision Dockerized hosts on cloud providers). The Dockerized hosts themselves can be thought of, and are sometimes referred to as, managed “machines”.
+
+<p>
+The Docker Engine and the Docker CLI are installed on the host, yet the application runs inside the container.
+</p>
