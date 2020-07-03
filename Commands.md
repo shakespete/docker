@@ -66,6 +66,10 @@
     <td>remove all running containers in order to clean up the system</td>
   </tr>
   <tr>
+    <td>docker image build -t **image-name** .</td>
+    <td>Note that there is a period at the end of the preceding command. This command means that the Docker builder is creating a new image called image-name using the Dockerfile that is present in the current directory. Here, the period at the end of the command stands for current directory.</td>
+  </tr>
+  <tr>
     <td>docker image history **container ID/name**</td>
     <td>to see how our custom image has been built</td>
   </tr>
