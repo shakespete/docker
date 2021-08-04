@@ -31,7 +31,7 @@
   </tr>
   <tr>
     <td>docker container inspect **container ID/name**</td>
-    <td>inspect a container</td>
+    <td>shows you all the details of a container</td>
   </tr>
   <tr>
     <td>docker container inspect -f "{{json .State}}" **container ID/name** | jq .</td>
@@ -133,17 +133,20 @@
     <td>docker image ls --filter dangling=false --filter "reference=*/*/*:latest"</td>
     <td> outputs images that are not dangling, that is, real images whose fully qualified name is of the form registry/user|orgrepository>:tag, and the tag is equal to latest. </td>
   </tr>
- </table>   
- 
-
-                
- 
-     
-                 
-                   
-          
- 
-                   
-                    
-  
-               
+  <tr>
+    <td>docker container top **container_id**</td>
+    <td>lists the processes running in the container</td>
+  </tr>
+  <tr>
+    <td>docker container stats **container_id**</td>
+    <td>shows a live view of how much CPU, memory, network, and disk the container is using</td>
+  </tr>
+  <tr>
+    <td>docker container rm --force $(docker container ls --all --quiet)</td>
+    <td>The $() syntax sends the output from one command into another command--it works just as well on Linux and Mac terminals, and on Windows PowerShell. Combining these commands gets a list of all the container IDs on your computer, and removes them all. This is a good way to tidy up your containers, but use it with caution, because it won’t ask for confirmation.</td>
+  </tr>
+  <tr>
+    <td>docker container run --detach --publish 8088:80 **container ID/name**</td>
+    <td>--detach Starts the container in the background and shows the container ID and --publish Publishes a port from the container to the computer</td>
+  </tr>
+ </table>
