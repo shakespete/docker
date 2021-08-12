@@ -149,4 +149,8 @@
     <td>docker container run --detach --publish 8088:80 **container ID/name**</td>
     <td>--detach Starts the container in the background and shows the container ID and --publish Publishes a port from the container to the computer</td>
   </tr>
+  <tr>
+    <td>docker system df</td>
+    <td>shows exactly how much disk space Docker is using</td>
+  </tr>
  </table>
