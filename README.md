@@ -4,6 +4,21 @@
 
 ![alt text](https://github.com/shakespete/docker/blob/master/img/docker_structure.png)
 
+<h3>Networks</h3>
+
+![alt text](https://github.com/shakespete/docker/blob/master/img/container_networks.png)
+
+<h3>Components</h3>
+
+![alt text](https://github.com/shakespete/docker/blob/master/img/docker_components.png)
+
+<h3>File System</h3>
+
+![alt text](https://github.com/shakespete/docker/blob/master/img/container_filesystem.png)
+
+<h3>Multiple Environments</h3>
+
+![alt text](https://github.com/shakespete/docker/blob/master/img/multiple_env.png)
 
 <h1>Commands:</h1>
 
