@@ -1,3 +1,8 @@
+<h1>Docker Overview:</h1>
+
+<h3>Structure</h3>
+![alt text](https://github.com/shakespete/docker/blob/master/img/docker-structure.png)
+
 <h1>Commands:</h1>
 
 <table>
