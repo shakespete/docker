@@ -20,6 +20,14 @@
 
 ![alt text](https://github.com/shakespete/docker/blob/master/img/multiple_env.png)
 
+<h3>CI</h3>
+
+<p>
+Containers running in Docker can connect to the Docker API and start new containers on the same Docker Engine they’re running on. It sounds odd, but it’s really just taking advantage of the fact that the Docker CLI calls into the Docker API, so CLIs from different places can connect to the same Docker Engine.
+</p>
+
+![alt text](https://github.com/shakespete/docker/blob/master/img/container_engine.png)
+
 <h1>Commands:</h1>
 
 <table>
