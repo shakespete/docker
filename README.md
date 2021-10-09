@@ -28,6 +28,10 @@ Containers running in Docker can connect to the Docker API and start new contain
 
 ![alt text](https://github.com/shakespete/docker/blob/master/img/container_engine.png)
 
+<p>
+The Docker CLI connects to the local Docker API by default, using a communication channel that is private to your machine--a socket on Linux or a named pipe on Windows. That communication channel can be used as a bind mount for containers, so when the CLI in the container runs, it’s actually connecting to the socket or named pipe on your machine. That unlocks some useful scenarios where apps inside containers can query Docker to find other containers, or start and stop new containers. There is also a security concern here, because the app in the container has full access to all the Docker features on the host, so you need to use this carefully with Docker images that you trust.
+</p>
+
 <h1>Commands:</h1>
 
 <table>
